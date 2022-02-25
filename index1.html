@@ -17725,6 +17725,14 @@
 
     }
 
+    @media only screen and (min-device-width : 460px) and (max-device-width : 617px) {
+      
+      #total {
+        margin-top: 13px !important;
+      }
+
+    }
+
     table,
     th,
     td {
@@ -18034,6 +18042,13 @@
                       </label>
                       <input oninput="update()" id="vehicle" class="form-control " type="text" name="vehicle">
                     </div>
+                    <!-- copy row temp -->
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <label style="text-align:left" for="copten" class="control-label "></label>
+
+                      </label>
+                      <button class="btn btn-success" id="copten" onclick="copTen()">Copy 10x</button>
+                    </div>
 
                   </div>
 
@@ -18152,7 +18167,7 @@
 
                       <button type="button" id="adds" class="btn btn-primary" onclick="addItem()">Add item</button>
                       <button onclick="submit()" class="btn btn-success">Submit</button>
-                      <input type="text" name="total" id="total">
+                      <input type="text" name="total" id="total" disabled>
 
                     </div>
                   </div>
@@ -40221,6 +40236,7 @@
         var count = 1;
 
         function copyRow() {
+          
           //check is there any rows in that item
           if (count > 0) {
 
@@ -40969,6 +40985,13 @@ var dateTime = date+'_'+time;
 
           });
         });
+      </script>
+      <script>
+        function copTen(){
+          for($i=0;$i<10;$i++){
+            copyRow();update();
+          }
+        }
       </script>
 
 
