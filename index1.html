@@ -18042,15 +18042,6 @@
                       </label>
                       <input oninput="update()" id="vehicle" class="form-control " type="text" name="vehicle">
                     </div>
-                    <!-- copy row temp -->
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                      <label style="text-align:left" for="copten" class="control-label "></label>
-
-                      </label>
-                      <button class="btn btn-success" id="copten" onclick="copTen()">Copy 10x</button>
-                    </div>
-
-                  </div>
 
                   <div class="ln_solid"></div>
 
@@ -40777,6 +40768,9 @@
           }
           //alert(array);
           pra.push(array);
+          var d1 = new Date();
+          pra.push(d1.getTime());
+
           if (!(localStorage.getItem('prac'))) {
 
             //alert("1");
@@ -40913,9 +40907,12 @@ var dateTime = date+'_'+time;
 
 
           }
+
           //alert(array);
           pra.push(array);
-
+          //console.log(pra);
+          var d1 = new Date();
+          pra.push(d1.getTime());
 
           //alert("1");
           var prac = [];
@@ -40985,13 +40982,6 @@ var dateTime = date+'_'+time;
 
           });
         });
-      </script>
-      <script>
-        function copTen(){
-          for($i=0;$i<10;$i++){
-            copyRow();update();
-          }
-        }
       </script>
 
 

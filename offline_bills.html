@@ -47924,7 +47924,7 @@
                       $tpc[i] + "-pcs</button></div></div><br>";
                     /*}
                     else{
-                    	
+                      
                      prev=$a[12];
                     }*/
 
@@ -47987,6 +47987,36 @@
                 }
                 if ((localStorage.getItem("prac"))) {
                   var whole = [];
+
+                  //  Delete the expired data
+                  var prac = [];
+                  var pra = [];
+                  var length = JSON.parse(localStorage.getItem("prac")).length;
+                  //alert(length);
+                  whole = JSON.parse(localStorage.getItem("prac"));
+                 // console.log(whole);
+                  var lenhj = length - 1;
+                  for (var i = lenhj; i >= 0; i--) {
+                      var d2 = new Date();
+                      if(whole[i] != null && typeof whole[i][7] != 'undefined'){
+
+                        var hrs = parseInt(Math.abs(whole[i][7] - d2.getTime()) / (1000 * 60 * 60) % 24);
+                        //console.log(hrs);
+                        if(hrs < 24){
+                          pra.push(whole[i]);
+                        }
+                      } else {
+                        pra.push(whole[i]);
+                      }
+
+                  }
+
+                  prac.push(pra);
+                //  console.log(prac[0]);
+                  localStorage.removeItem('prac');
+                  localStorage.setItem("prac", JSON.stringify(prac[0]));
+                  // End delete the expired data
+
                   var length = JSON.parse(localStorage.getItem("prac")).length;
                   //alert(length);
                   whole = JSON.parse(localStorage.getItem("prac"));
@@ -48288,7 +48318,7 @@
                         }
 
                         /*}).done(function() {
-                    	
+                      
        location.reload();*/
                       });
                     }

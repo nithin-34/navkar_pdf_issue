@@ -8,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
-    	<link rel="manifest" href="manifest.json">
+      <link rel="manifest" href="manifest.json">
      <script src='/scripts/pwacompat.min.js' async></script>
      
-	  
+    
     <title> NAVKAR </title>
 
     <link rel = "icon" type = "image/png"  href = "image/1.jpg">
@@ -679,6 +679,13 @@ and (max-device-width : 1024px)  {
    
   
 }
+@media only screen and (min-device-width : 460px) and (max-device-width : 617px) {
+      
+      #total {
+        margin-top: 13px !important;
+      }
+
+    }
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -937,7 +944,7 @@ table, th, td {
                       <div class="form-group">
                         
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                        	<label style="text-align:left" for="vehicle" class="control-label ">Vehicle No</label>
+                          <label style="text-align:left" for="vehicle" class="control-label ">Vehicle No</label>
                         
                         </label>
                           <input id="vehicle" oninput="update()" class="form-control " type="text" name="vehicle">
@@ -966,15 +973,15 @@ table, th, td {
                     <br />
                    
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      	
+                        
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Measurement List </h2>
                     <select id="selecto" style="margin-left:20px">
-                    	<option>inch to feet
-                    	</option>
-                    	<option>cm to meter</option>
-                    	
+                      <option>inch to feet
+                      </option>
+                      <option>cm to meter</option>
+                      
                     </select>
                     
                     <div class="clearfix"></div>
@@ -1043,14 +1050,14 @@ table, th, td {
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3" id="down">
-                        	<button  class="btn btn-success" onclick="deleteRow();update();">Back</button>
+                          <button  class="btn btn-success" onclick="deleteRow();update();">Back</button>
                            <button  class="btn btn-success" onclick="copyRow();update()">Copy</button>
                          
                           <button  class="btn btn-success" onclick="addRow();update()">Add</button>
                          
                            <button type="button" id="adds" class="btn btn-primary" onclick="addItem()">Add item</button>
                             <button onclick="submit()" class="btn btn-success">Submit</button>
-                            <input type="text" name="total" id="total">
+                            <input type="text" name="total" id="total" disabled>
 
                         </div>
                       </div>
@@ -5898,8 +5905,8 @@ pointBorderWidth:1,data:[31,74,6,39,20,85,7]},{label:"My Second dataset",backgro
        
        var count=1;
        function copyRow(){
-       	//check is there any rows in that item
-       	if(count>0){
+        //check is there any rows in that item
+        if(count>0){
             
            count++;
 
@@ -5921,7 +5928,7 @@ pointBorderWidth:1,data:[31,74,6,39,20,85,7]},{label:"My Second dataset",backgro
             c++;
         }
         else{
-        	alert("sorry , no rows in this item");
+          alert("sorry , no rows in this item");
         }
 
 
@@ -5929,18 +5936,18 @@ calculateArea();
             
         }
         function deleteRow(){
-        	if(count>=1){
-        		//alert(c);
-        		$("#row-"+(c-1)).remove();
-        		count--;
-        		c--;
+          if(count>=1){
+            //alert(c);
+            $("#row-"+(c-1)).remove();
+            count--;
+            c--;
 
-        	}
-        	else{
-        		alert("no rows in this item");
+          }
+          else{
+            alert("no rows in this item");
 
 
-        	}
+          }
 
             calculateArea();
 
@@ -6148,8 +6155,8 @@ function calculateArea(){
            }
            else{
                var area= rarea*0.00694444;
-  		var conare= area.toFixed(2);
-  		 
+      var conare= area.toFixed(2);
+       
            }
            
          
@@ -6164,166 +6171,166 @@ function calculateArea(){
       }
   </script>
    <script>
-  	function enter1(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("l");
-  	var nt=aty1[0];
-  	var d=aty1[1];
+    function enter1(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("l");
+    var nt=aty1[0];
+    var d=aty1[1];
 
-  		charCode = event.which || event.keyCode;
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
       
     document.getElementById("ty"+nt+"w"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
  <script>
-  	function enter2(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("w");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter2(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("w");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode <48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
       
     document.getElementById("ty"+nt+"l1-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
   <script>
-  	function enter3(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("l1-");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter3(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("l1-");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
      
     document.getElementById("ty"+nt+"w1-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
  <script>
-  	function enter4(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("w1-");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter4(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("w1-");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode >57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
       
     document.getElementById("ty"+nt+"l2-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
   <script>
-  	function enter5(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("l2-");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter5(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("l2-");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
      
     document.getElementById("ty"+nt+"w2-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
   <script>
-  	function enter6(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("w2-");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter6(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("w2-");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
      
     document.getElementById("ty"+nt+"l3-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
   <script>
-  	function enter7(ele){
-  		var fgk=ele.id;
-  		var aty=fgk.split("ty");
-  		var aty1=aty[1].split("l3-");
-  	var nt=aty1[0];
-  	var d=aty1[1];
-  		charCode = event.which || event.keyCode;
+    function enter7(ele){
+      var fgk=ele.id;
+      var aty=fgk.split("ty");
+      var aty1=aty[1].split("l3-");
+    var nt=aty1[0];
+    var d=aty1[1];
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode >57) 
   {
-  	event.preventDefault();
-  	if (charCode==13){
+    event.preventDefault();
+    if (charCode==13){
      
     document.getElementById("ty"+nt+"w3-"+d).focus();
   }
        
   }
     
-  	}
+    }
   </script>
   <script>
-  	function enter8(){
-  		charCode = event.which || event.keyCode;
+    function enter8(){
+      charCode = event.which || event.keyCode;
 
   if (charCode < 48 || charCode > 57) 
   {
-  	event.preventDefault();
-  	
+    event.preventDefault();
+    
   }
        
   
     
-  	}
+    }
   </script>
   <script>
   
@@ -6407,6 +6414,9 @@ function calculateArea(){
      }
      //alert(array);
      pra.push(array);
+     var d1 = new Date();
+      pra.push(d1.getTime());
+
      if(!(localStorage.getItem('prac'))){
      
      //alert("1");
@@ -6526,6 +6536,8 @@ function calculateArea(){
      //alert(array);
      pra.push(array);
      
+     var d1 = new Date();
+     pra.push(d1.getTime());
      
      //alert("1");
      var prac=[];
@@ -6599,7 +6611,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 </script>
 
-	
+  
   </body>
   
   
